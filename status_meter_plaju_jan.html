@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>STATUS METERING PLAJU</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Style the side navigation */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the content */
+.content {
+    margin-left: 200px;
+    padding-left: 20px;
+}
+
+/* Style the content */
+#status_rinci_panel {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/* Style the content */
+.legend {
+    margin-left: 200px;
+    margin-right: 20px;
+    padding-left: 20px;
+    float: right;
+}
+
+/* Style the content */
+.status_panel {
+    margin-left: 200px;
+    padding: : 20px;
+}
+
+#status_meter {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#status_meter td,
+#status_meter th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+#status_meter tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#status_meter tr:hover {
+    background-color: #ddd;
+}
+#status_meter th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#status_362 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_310 {
+  font-size: 30px;
+  color: red;
+}
+
+#status_320 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_318 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_306 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_308 {
+  font-size: 30px;
+  color: yellow;
+}
+
+#status_1000 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_1004 {
+  font-size: 30px;
+  color: red;
+}
+
+#status_0140 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_0202 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_0154 {
+  font-size: 30px;
+  color: yellow;
+}
+
+#status_0208 {
+  font-size: 30px;
+  color: green;
+}
+#status_0146 {
+  font-size: 30px;
+  color: yellow;
+}
+#status_0210 {
+  font-size: 30px;
+  color: green;
+}
+#status_0101 {
+  font-size: 30px;
+  color: yellow;
+}
+#status_0102 {
+  font-size: 30px;
+  color: yellow;
+}
+#status_1500 {
+  font-size: 30px;
+  color: green;
+}
+#status_0222 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_0110 {
+  font-size: 30px;
+  color: green;
+}
+
+#status_0120 {
+  font-size: 30px;
+  color: yellow;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 200px;
+    padding-left:  20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="index.html">LOG OUT</a>
+  <a href="#">STATUS</a>
+  <a href="meter_362.html">METER 362</a>
+  <a href="#">METER 310</a>
+  <a href="#">METER 320</a>
+  <a href="#">METER 318</a>
+  <a href="#">METER 306</a>
+  <a href="#">METER 308</a>
+  <a href="#">METER 1000</a>
+  <a href="#">METER 1004</a>
+  <a href="#">METER 0140</a>
+  <a href="#">METER 0202</a>
+  <a href="#">METER 0154</a>
+  <a href="#">METER 0208</a>
+  <a href="#">METER 0146</a>
+  <a href="#">METER 0210</a>
+  <a href="#">METER 0101</a>
+  <a href="#">METER 0102</a>
+  <a href="#">METER 1500</a>
+  <a href="#">METER 0222</a>
+  <a href="#">METER 0110</a>
+  <a href="#">METER 0120</a>
+</div>
+
+<div class="legend">
+  <div>Legend :</div>
+  <div><font style="color: green"> &#9899 </font> Meter dapat Transfer dan dapat proving </div>
+  <div><font style="color: yellow"> &#9899 </font> Meter dapat Transfer dan tidak dapat proving </div>
+  <div><font style="color: red"> &#9899 </font> Meter tidak dapat Transfer dan tidak dapat proving </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">JANUARI</button>
+  <div class="dropdown-content">
+    <a href="#">JANUARY</a>
+    <a href="#">FEBRUARY</a>
+    <a href="#">MARET</a>
+  </div>
+</div>
+
+<div class="content">
+  <h2>STATUS METERING PERTAMINA RU III</h2>
+  <P>PLAJU - SUNGAI GERONG</P>
+</div>
+
+<div id="status_rinci_panel">
+  <table id="status_meter">
+    <tr>
+        <th>NO</th>
+        <th>METER</th>
+        <th>LOKASI</th>
+        <th>PRODUCT</th>
+        <th>MASALAH</th>
+        <th>TINDAK LANJUT</th>
+        <th>ACTION</th>
+        <th>STATUS</th>
+        <th>KETERANGAN</th>
+        <th>TARGET</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>FQIT 0362</td>
+        <td>LOADING PLAJU</td>
+        <td>PREMIUM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_362" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>FQIT 0310</td>
+        <td>LOADING PLAJU</td>
+        <td>NAPTHA</td>
+        <td>Bearing Rotor Turbine Bermasalah</td>
+        <td>Pengadaan Turbine Meter</td>
+        <td>PERTAMINA</td>
+        <td id="status_310" style="text-align: center">&#9899</td>
+        <td>Pegandaan Material sedang dalam proses</td>
+        <td>December 2017</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>FQIT 0320</td>
+        <td>LOADING PLAJU</td>
+        <td>SPBX</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_320" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>                    
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>FQIT 0318</td>
+        <td>LOADING PLAJU</td>
+        <td>LAWS</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_318" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>FQIT 0306</td>
+        <td>LOADING PLAJU</td>
+        <td>KEROSENE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_306" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>FQIT 0308</td>
+        <td>LOADING PLAJU</td>
+        <td>AVTUR</td>
+        <td>DBB MOV-D passing</td>
+        <td>Perbaikan Slip Seal</td>
+        <td>PBAS</td>                    
+        <td id="status_308" style="text-align: center">&#9899</td>
+        <td>Slip Seal dalam proses perbaikan</td>
+        <td>Desember 2017 - Januari 2018</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>FQIT 1000</td>
+        <td>LOADING PLAJU</td>
+        <td>CRUDE OIL IMPORT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_1000" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>FQIT 1004</td>
+        <td>LOADING PLAJU</td>
+        <td>CRUDE</td>
+        <td>masalah pada meter register, ada kerusakan pada gear meter register, sehingga tidak dapat menghitung flowrate product</td>
+        <td>Penggantian baru meter register</td>
+        <td>PERTAMINA</td>
+        <td id="status_1004" style="text-align: center">&#9899</td>
+        <td>pengadaan material sedang dalam proses</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>FQIT 0140</td>
+        <td>LOADING PLAJU</td>
+        <td>BUNKER SOLAR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_0140" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>FQIT 0202</td>
+        <td>LOADING PLAJU</td>
+        <td>SOLAR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_0202" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>FQIT 0154</td>
+        <td>LOADING PLAJU</td>
+        <td>MDO</td>
+        <td>MOV-D(inlet DBB valve) tidak terpadang dan pipa sedang di sorok</td>
+        <td>akan dipasang MOV yang beraal dari dermaga 6</td>
+        <td>PERTAMINA DAN PBAS</td>
+        <td id="status_0154" style="text-align: center">&#9899</td>
+        <td>Sebelumnya MOV D pada meter 154 di lepas untuk dipasang pada metering dermaga 6. sekarang menunggu MOV dikembalikan dari dermaga 6 ke meter 154 dan akan di pasang oleh PBAS</td>
+        <td>november 2017 - januari 2018</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>FQIT 0208</td>
+        <td>LOADING PLAJU</td>
+        <td>DIESEL OIL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_0208" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>FQIT 0146</td>
+        <td>LOADING PLAJU</td>
+        <td>MFO</td>
+        <td>MOV D dan MOV F tidak terpasang dan pipa sedang disorok</td>
+        <td>MOV D dan F akan diganti sesuai dengan kontrak variable material</td>
+        <td>PBAS</td>
+        <td id="status_0146" style="text-align: center">&#9899</td>
+        <td>pengadaan material sedang dalam proses</td>
+        <td>Maret 2018</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>FQIT 0210</td>
+        <td>LOADING PLAJU</td>
+        <td>FUEL OIL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_0210" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>FQIT 0101</td>
+        <td>LPG P LAYANG</td>
+        <td>LPG</td>
+        <td>HMI tidak dapat mengoperasikan(open/close) MOV A, B dan C; indikasi MOV(open/close) tidak dapat tampil pada HMI</td>
+        <td>perlu ada penggantian PLC</td>
+        <td>PERTAMINA</td>
+        <td id="status_0101" style="text-align: center">&#9899</td>
+        <td>hasil pengecekan menemukan HMI tidak dapat berkomunikasi dengan PLC, MOV beroperasi oleh PLC, Rekomendasi penggantian PLC telah dilakukan</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>FQIT 0102</td>
+        <td>LPG P LAYANG</td>
+        <td>LPG</td>
+        <td>HMI tidak dapat mengoperasikan(open/close) MOV A, B dan C; indikasi MOV(open/close) tidak dapat tampil pada HMI</td>
+        <td>perlu ada penggantian PLC</td>
+        <td>PERTAMINA</td>
+        <td id="status_0102" style="text-align: center">&#9899</td>
+        <td>hasil pengecekan menemukan HMI tidak dapat berkomunikasi dengan PLC, MOV beroperasi oleh PLC, Rekomendasi penggantian PLC telah dilakukan</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>FQIT 1500</td>
+        <td>S GERONG</td>
+        <td>BUNKER DIESEL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_1500" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>FQIT 0222</td>
+        <td>S GERONG</td>
+        <td>FUEL OIL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_0222" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>FQIT 0110</td>
+        <td>KRAMASAN</td>
+        <td>SOLAR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="status_0110" style="text-align: center">&#9899</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>FQIT 0120</td>
+        <td>KRAMASAN</td>
+        <td>PREMIUM</td>
+        <td>MOV 121 passing karena slip seal rusak</td>
+        <td>penggantian slip seal</td>
+        <td>PBAS</td>
+        <td id="status_0120" style="text-align: center">&#9899</td>
+        <td>Dalam Proses Pengiriman</td>
+        <td>February - Maret 2018</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
